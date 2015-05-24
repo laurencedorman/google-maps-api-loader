@@ -1,0 +1,37 @@
+{
+  "name": "google-maps-api-loader",
+  "version": "0.0.1",
+  "description": "Conditionally load the Google Maps API in an ES6 promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ld0rman/google-maps-api-loader.git"
+  },
+  "keywords": [
+    "google-maps",
+    "google-maps-api",
+    "es6",
+    "promise"
+  ],
+  "author": "ld0rman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ld0rman/google-maps-api-loader/issues"
+  },
+  "homepage": "https://github.com/ld0rman/google-maps-api-loader#readme",
+  "dependencies": {
+    "es6-promise": "^2.1.1"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.1",
+    "chai": "^2.3.0",
+    "karma": "^0.12.32",
+    "karma-browserify": "^4.2.1",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-mocha": "^0.1.10",
+    "mocha": "^2.2.5"
+  }
+}

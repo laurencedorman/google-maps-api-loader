@@ -1,0 +1,71 @@
+{
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": true
+    },
+    "rules": {
+        // Possible Errors
+        "new-cap": 0,
+        "no-underscore-dangle": 0,          // Allow variables to begin with an underscore
+        "no-comma-dangle": 1,               // Disallow trailing commas in object literals
+        "no-cond-assign": 1,                // Disallow assignment in conditional expressions
+        "no-console": 0,                    // Allow console.log
+        "no-dupe-keys": 1,                  // Disallow duplicate keys when creating object
+        "no-empty": 1,                      // Disallow empty statements
+        "no-extra-semi": 1,                 // Disallow unnecessary semicolons
+        "no-func-assign": 1,                // Disallow overwriting functions written as function declarations
+        "no-invalid-regexp": 1,             // Disallow invalid regular expression strings in the RegExp constructor
+        "no-irregular-whitespace": 1,       // Disallow irregular whitespace outside of strings and comments
+        "no-sparse-arrays": 2,              // Disallow sparse arrays
+        "no-unreachable": 2,                // Disallow unreachable statements after a return, throw, continue, or break statement
+        "valid-typeof": 2,                  // Disallow invalid string with typeof
+
+        // Best Practices
+
+        "curly": [2, "all"],                // Disallow no curly braces on if statements
+        "dot-notation": 1,                  // Encourages use of dot notation whenever possible
+        "eqeqeq": 2,                        // Require the use of === and !==
+        "guard-for-in": 2,                  // Make sure for-in loops have an if statement
+        "no-else-return": 1,                // Disallow else after a return in an if
+        "no-eval": 2,                       // Disallow use of eval()
+        "no-floating-decimal": 1,           // Disallow the use of leading or trailing decimal points in numeric literals
+        "no-iterator": 1,                   // Disallow usage of __iterator__ property
+        "no-lone-blocks": 1,                // Disallow unnecessary nested blocks
+        "no-multi-spaces": [1, {            // Disallow use of multiple spaces
+            "exceptions": {
+                "VariableDeclarator": true
+            }
+        }],
+        "no-redeclare": 1,                  // Disallow declaring the same variable more then once
+        "wrap-iife": [1, "inside"],         // Require immediate function invocation to be wrapped in parentheses
+        "yoda": 0,                          // if ('something' === variable) ...
+
+        // Variables
+
+        "no-undef": 1,                      // Disallow use of undeclared variables
+        "no-undef-init": 1,                 // Disallow use of undefined when initializing variables
+        "no-unused-vars": 1,                // Disallow declaration of variables that are not used in the code
+        "no-use-before-define": 1,          // Disallow use of variables before they are defined
+
+        // Node
+
+        "no-mixed-requires": 0,
+        "no-path-concat": 1,
+
+        // Stylistic Issues
+
+        "indent": "4",
+        "quotes": [1, "single"],
+        "comma-spacing": [2, { "before": false, "after": true }],
+        "eol-last": 1,
+        "no-lonely-if": 1,
+        "no-mixed-spaces-and-tabs": 2,
+        "no-multiple-empty-lines": 2,
+        "no-spaced-func": 1,
+        "space-before-function-parentheses": [1, "never"],
+        "no-trailing-spaces": 1,
+        "space-after-keywords": [1, "always"],
+        "space-in-parens": [2, "never"]
+    }
+}
