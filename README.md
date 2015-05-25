@@ -7,7 +7,9 @@ Provides a convenient wrapper for the Google Maps API, allowing it to be called 
 
     var GoogleMapsApiLoader = require('google-maps-api-loader');
 
-    GoogleMapsApiLoader.load()
+    GoogleMapsApiLoader({
+            libraries: ['places']
+        })
         .then(function(googleApi) {
             var autocomplete = new googleApi.maps.places.AutocompleteService();
         }, function(err) {
