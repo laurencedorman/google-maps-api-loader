@@ -1,6 +1,6 @@
 {
   "name": "google-maps-api-loader",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Conditionally load the Google Maps API in an ES6 promise",
   "main": "index.js",
   "scripts": {
