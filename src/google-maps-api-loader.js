@@ -1,39 +1,56 @@
 'use strict';
 
 var Promise = require('es6-promise').Promise;
+var urlBuilder = require('../lib/url-builder.js');
 
-var hasLoaded = false;
+var googleApi;
 
-function loadAutoCompleteAPI() {
+function loadAutoCompleteAPI(params) {
     var script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?libraries=places&callback=googleMapsAutoCompleteAPILoad';
+
     script.type = 'text/javascript';
+
+    script.src = urlBuilder({
+        base: 'https://maps.googleapis.com/maps/api/js',
+        libraries: params.libraries || [],
+        callback: 'googleMapsAutoCompleteAPILoad'
+    });
+
     document.querySelector('head').appendChild(script);
 }
 
-exports.load = function() {
+/**
+ * googleMapsApiLoader
+ *
+ * @param  params           {Object}
+ * @param  params.libraries {Array}
+ *
+ * @return {Promise}
+ */
+function googleMapsApiLoader(params) {
+    if (googleApi) {
+        return Promise.resolve(googleApi);
+    }
+
     var windowRef = window ? window : {};
 
-    if (hasLoaded && windowRef.google) {
-        return Promise.resolve(windowRef.google);
-    }
-    else if (!hasLoaded) {
-        var deferred = function(resolve, reject) {
-            hasLoaded = true;
-            loadAutoCompleteAPI();
+    var deferred = function(resolve, reject) {
+        loadAutoCompleteAPI(params);
 
-            windowRef.googleMapsAutoCompleteAPILoad = function() {
-                resolve(windowRef.google);
-            };
-
-            setTimeout(function() {
-                if (!windowRef.google) {
-                    reject(new Error('Loading took too long'));
-                }
-            }, 5000);
+        windowRef.googleMapsAutoCompleteAPILoad = function() {
+            googleApi = windowRef.google;
+            resolve(googleApi);
         };
 
-        return new Promise(deferred);
-    }
-};
+        setTimeout(function() {
+            if (!windowRef.google) {
+                reject(new Error('Loading took too long'));
+            }
+        }, 5000);
+    };
+
+    return new Promise(deferred);
+}
+
+module.exports = googleMapsApiLoader;
 

@@ -4,7 +4,7 @@
   "description": "Conditionally load the Google Maps API in an ES6 promise",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec "
+    "test": "karma start"
   },
   "repository": {
     "type": "git",

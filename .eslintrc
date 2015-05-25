@@ -6,6 +6,7 @@
     },
     "rules": {
         // Possible Errors
+        "strict": [2, "global"],
         "new-cap": 0,
         "no-underscore-dangle": 0,          // Allow variables to begin with an underscore
         "no-comma-dangle": 1,               // Disallow trailing commas in object literals
