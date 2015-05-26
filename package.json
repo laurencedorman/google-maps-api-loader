@@ -28,10 +28,12 @@
   "devDependencies": {
     "browserify": "^10.2.1",
     "chai": "^2.3.0",
+    "chai-as-promised": "^5.0.0",
     "karma": "^0.12.32",
     "karma-browserify": "^4.2.1",
     "karma-chrome-launcher": "^0.1.12",
     "karma-mocha": "^0.1.10",
+    "karma-mocha-reporter": "^1.0.2",
     "mocha": "^2.2.5"
   }
 }
