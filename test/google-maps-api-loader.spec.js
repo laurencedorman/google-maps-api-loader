@@ -16,9 +16,10 @@ describe('urlBuilder', function () {
 			base: 'first-base',
 			libraries: ['places','moreplaces'],
 			apiKey: 'abc123',
+			client: 'def456',
 			callback: 'heyyyy'
 		});
-		expect(url).to.equal('first-base?key=abc123&libraries=places,moreplaces&callback=heyyyy');
+		expect(url).to.equal('first-base?key=abc123&client=def456&libraries=places,moreplaces&callback=heyyyy');
 	});
 });
 
