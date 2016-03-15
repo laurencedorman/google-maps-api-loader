@@ -13,7 +13,9 @@ function loadAutoCompleteAPI(params) {
     script.src = urlBuilder({
         base: 'https://maps.googleapis.com/maps/api/js',
         libraries: params.libraries || [],
-        callback: 'googleMapsAutoCompleteAPILoad'
+        callback: 'googleMapsAutoCompleteAPILoad',
+        apiKey: params.apiKey,
+        client: params.client
     });
 
     document.querySelector('head').appendChild(script);

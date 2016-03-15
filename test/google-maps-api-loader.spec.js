@@ -8,6 +8,20 @@ chai.use(chaiAsPromised);
 var expect = chai.expect;
 
 var googleMapsApiLoader = require('../src/google-maps-api-loader.js');
+var urlBuilder = require('../lib/url-builder');
+
+describe('urlBuilder', function () {
+	it('Should create URLs with all the properties', function () {
+		var url = urlBuilder({
+			base: 'first-base',
+			libraries: ['places','moreplaces'],
+			apiKey: 'abc123',
+			client: 'def456',
+			callback: 'heyyyy'
+		});
+		expect(url).to.equal('first-base?key=abc123&client=def456&libraries=places,moreplaces&callback=heyyyy');
+	});
+});
 
 describe('googleMapsApiLoader', function() {
     it('Should load the Google Maps API', function() {
