@@ -1,6 +1,9 @@
 
 # Google Maps API Loader
 
+
+[![npm](https://img.shields.io/npm/v/google-maps-api-loader.svg)](http://npm.im/google-maps-api-loader)
+
 Provides a convenient wrapper for the Google Maps API, allowing it to be called in the promise syntax.
 
 ```

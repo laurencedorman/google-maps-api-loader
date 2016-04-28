@@ -4,7 +4,7 @@
   "description": "Conditionally load the Google Maps API in an ES6 promise",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start --single-run"
   },
   "repository": {
     "type": "git",
