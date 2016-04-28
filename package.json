@@ -24,20 +24,21 @@
   },
   "homepage": "https://github.com/ld0rman/google-maps-api-loader#readme",
   "dependencies": {
-    "es6-promise": "^2.1.1"
+    "es6-promise": "^3.1.2"
   },
   "devDependencies": {
-    "jscs": "^3.0.3",
-    "browserify": "^10.2.1",
-    "chai": "^2.3.0",
+    "browserify": "^13.0.0",
+    "chai": "^3.5.0",
     "chai-as-promised": "^5.0.0",
-    "karma": "^0.12.32",
-    "karma-browserify": "^4.2.1",
-    "karma-chrome-launcher": "^0.1.12",
-    "karma-mocha": "^0.1.10",
-    "karma-mocha-reporter": "^1.0.2",
-    "karma-phantomjs-launcher": "^0.1.4",
+    "jscs": "^3.0.3",
+    "karma": "^0.13.22",
+    "karma-browserify": "^5.0.4",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-mocha": "^0.2.2",
+    "karma-mocha-reporter": "^2.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
     "karma-phantomjs-shim": "^1.0.0",
-    "mocha": "^2.2.5"
+    "mocha": "^2.2.5",
+    "phantomjs-prebuilt": "^2.1.7"
   }
 }
