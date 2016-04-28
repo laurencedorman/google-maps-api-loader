@@ -6,52 +6,52 @@ var urlBuilder = require('../lib/url-builder.js');
 var googleApi;
 
 function loadAutoCompleteAPI(params) {
-    var script = document.createElement('script');
+  var script = document.createElement('script');
 
-    script.type = 'text/javascript';
+  script.type = 'text/javascript';
 
-    script.src = urlBuilder({
-        base: 'https://maps.googleapis.com/maps/api/js',
-        libraries: params.libraries || [],
-        callback: 'googleMapsAutoCompleteAPILoad',
-        apiKey: params.apiKey,
-        client: params.client
-    });
+  script.src = urlBuilder({
+    base: 'https://maps.googleapis.com/maps/api/js',
+    libraries: params.libraries || [],
+    callback: 'googleMapsAutoCompleteAPILoad',
+    apiKey: params.apiKey,
+    client: params.client
+  });
 
-    document.querySelector('head').appendChild(script);
+  document.querySelector('head').appendChild(script);
 }
 
 /**
  * googleMapsApiLoader
  *
- * @param  params           {Object}
- * @param  params.libraries {Array}
+ * @param  {object} params
+ * @param  {object} params.libraries
  *
- * @return {Promise}
+ * @return {promise}
  */
 function googleMapsApiLoader(params) {
-    if (googleApi) {
-        return Promise.resolve(googleApi);
-    }
+  if (googleApi) {
+    return Promise.resolve(googleApi);
+  }
 
-    var windowRef = window ? window : {};
+  var windowRef = window ? window : {};
 
-    var deferred = function(resolve, reject) {
-        loadAutoCompleteAPI(params);
+  var deferred = function(resolve, reject) {
+    loadAutoCompleteAPI(params);
 
-        windowRef.googleMapsAutoCompleteAPILoad = function() {
-            googleApi = windowRef.google;
-            resolve(googleApi);
-        };
-
-        setTimeout(function() {
-            if (!windowRef.google) {
-                reject(new Error('Loading took too long'));
-            }
-        }, 5000);
+    windowRef.googleMapsAutoCompleteAPILoad = function() {
+      googleApi = windowRef.google;
+      resolve(googleApi);
     };
 
-    return new Promise(deferred);
+    setTimeout(function() {
+      if (!windowRef.google) {
+        reject(new Error('Loading took too long'));
+      }
+    }, 5000);
+  };
+
+  return new Promise(deferred);
 }
 
 module.exports = googleMapsApiLoader;

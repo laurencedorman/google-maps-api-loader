@@ -4,7 +4,7 @@
   "description": "Conditionally load the Google Maps API in an ES6 promise",
   "main": "index.js",
   "scripts": {
-    "test": "karma start --single-run"
+    "test": "./node_modules/.bin/jscs . && karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "es6-promise": "^2.1.1"
   },
   "devDependencies": {
+    "jscs": "^3.0.3",
     "browserify": "^10.2.1",
     "chai": "^2.3.0",
     "chai-as-promised": "^5.0.0",
