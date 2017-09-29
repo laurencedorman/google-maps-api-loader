@@ -15,7 +15,8 @@ function loadAutoCompleteAPI(params) {
     libraries: params.libraries || [],
     callback: 'googleMapsAutoCompleteAPILoad',
     apiKey: params.apiKey,
-    client: params.client
+    client: params.client,
+    language: params.language
   });
 
   document.querySelector('head').appendChild(script);

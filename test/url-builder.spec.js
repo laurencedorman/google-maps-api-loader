@@ -13,6 +13,7 @@ describe('urlBuilder', function() {
     builtUrl = urlBuilder({
       base: 'https://maps.googleapis.com/maps/api/js',
       libraries: ['places', 'geometry'],
+			language: 'en',
       callback: 'apiLoaded'
     });
   });
@@ -26,6 +27,7 @@ describe('urlBuilder', function() {
 
     expect(paramSection).to.be.a('string');
     expect(paramSection).to.have.string('libraries=places,geometry');
+    expect(paramSection).to.have.string('&language=en');
     expect(paramSection).to.have.string('&callback=apiLoaded');
   });
 });
