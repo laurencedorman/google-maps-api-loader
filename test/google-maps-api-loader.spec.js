@@ -12,7 +12,7 @@ var urlBuilder = require('../lib/url-builder');
 
 describe('urlBuilder', function() {
   it('Should create URLs with all the properties', function() {
-    var result = 'first-base?key=abc123&client=def456&libraries=places,moreplaces&language=en&callback=heyyyy';
+    var result = 'first-base?key=abc123&client=def456&libraries=places,moreplaces&language=en&v=3&callback=heyyyy';
 
     var url = urlBuilder({
       base: 'first-base',
@@ -20,6 +20,7 @@ describe('urlBuilder', function() {
       apiKey: 'abc123',
       client: 'def456',
       language: 'en',
+      version: 3,
       callback: 'heyyyy'
     });
     expect(url).to.equal(result);
