@@ -13,7 +13,7 @@ describe('urlBuilder', function() {
     builtUrl = urlBuilder({
       base: 'https://maps.googleapis.com/maps/api/js',
       libraries: ['places', 'geometry'],
-			language: 'en',
+      language: 'en',
       callback: 'apiLoaded'
     });
   });

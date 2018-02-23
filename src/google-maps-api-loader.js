@@ -35,24 +35,20 @@ function googleMapsApiLoader(params) {
     return Promise.resolve(googleApi);
   }
 
-  var windowRef = window ? window : {};
-
-  var deferred = function(resolve, reject) {
+  return new Promise(function(resolve, reject) {
     loadAutoCompleteAPI(params);
 
-    windowRef.googleMapsAutoCompleteAPILoad = function() {
-      googleApi = windowRef.google;
+    window.googleMapsAutoCompleteAPILoad = function() {
+      googleApi = window.google;
       resolve(googleApi);
     };
 
     setTimeout(function() {
-      if (!windowRef.google) {
+      if (!window.google) {
         reject(new Error('Loading took too long'));
       }
     }, 5000);
-  };
-
-  return new Promise(deferred);
+  });
 }
 
 module.exports = googleMapsApiLoader;
