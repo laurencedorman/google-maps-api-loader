@@ -1,6 +1,9 @@
 
 # Google Maps API Loader
 
+## DEPRECATED
+
+Use the official [googlemaps/js-api-loader](https://github.com/googlemaps/js-api-loader) library instead.
 
 [![npm](https://img.shields.io/npm/v/google-maps-api-loader.svg)](http://npm.im/google-maps-api-loader)
 [![travis](https://travis-ci.org/laurencedorman/google-maps-api-loader.svg?branch=master)](https://travis-ci.org/laurencedorman/google-maps-api-loader)
